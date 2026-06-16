@@ -1,6 +1,6 @@
 // https://di-mgt.com.au/Sieve.c.html
-export default function sieve(n: number, onProgress: (percent: number) => void) {
-  if (!Number.isInteger(n) || n < 1) {
+export default function sieve(n: number, onProgress?: (percent: number) => void) {
+  if (!Number.isInteger(n) || n < 2) {
     throw new Error("Invalid argument");
   }
   const nlimit = n;
@@ -16,7 +16,7 @@ export default function sieve(n: number, onProgress: (percent: number) => void) 
   let lastSentK = 0;
   for (let k = 1; k <= klimit; k = m) {
 
-    if (k - lastSentK >= 1000) {
+    if (onProgress && k - lastSentK >= 1000) {
       console.log('sending progress', k);
       onProgress(Math.floor(100 * k / klimit));
       lastSentK = k;
