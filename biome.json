@@ -1,0 +1,13 @@
+{
+	"linter": {
+		"domains": {
+			"react": "all",
+			"test": "all"
+		},
+		"rules": {
+			"style": {
+				"noNonNullAssertion": "off"
+			}
+		}
+	}
+}

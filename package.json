@@ -1,29 +1,24 @@
 {
-  "name": "bun-react-template",
-  "version": "0.1.0",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "bun --hot src/index.ts",
-    "typecheck": "tsc --noEmit",
-    "lint": "eslint .",
-    "build": "bun build ./src/index.html --outdir=dist --sourcemap --target=browser --minify --define:process.env.NODE_ENV='\"production\"' --env='BUN_PUBLIC_*'",
-    "start": "NODE_ENV=production bun src/index.ts"
-  },
-  "dependencies": {
-    "react": "^19",
-    "react-dom": "^19"
-  },
-  "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "@types/bun": "latest",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^10.5.0",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "globals": "^17.6.0",
-    "jiti": "^2.7.0",
-    "typescript-eslint": "^8.61.1"
-  }
+	"name": "bun-react-template",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "bun --hot src/index.ts",
+		"typecheck": "tsc --noEmit",
+		"lint": "bunx --bun @biomejs/biome lint",
+		"lint:fix": "bunx --bun @biomejs/biome check --write",
+		"build": "bun build ./src/index.html --outdir=dist --sourcemap --target=browser --minify --define:process.env.NODE_ENV='\"production\"' --env='BUN_PUBLIC_*'",
+		"start": "NODE_ENV=production bun src/index.ts"
+	},
+	"dependencies": {
+		"react": "^19",
+		"react-dom": "^19"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.5.0",
+		"@types/bun": "latest",
+		"@types/react": "^19",
+		"@types/react-dom": "^19"
+	}
 }
