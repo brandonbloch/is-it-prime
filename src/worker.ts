@@ -1,6 +1,5 @@
 import type { CheckPrimeProgress, CheckPrimeRequest, CheckPrimeResponse } from '@/types.ts';
 import { checkValue } from '@/worker-utils';
-import sieve from '@/worker-utils/sieve.ts';
 
 console.log("worker is working!");
 

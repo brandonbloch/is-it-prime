@@ -20,7 +20,7 @@ export function App() {
       setProgress(null);
       setResponse(e.data);
     }
-  }, [setProgress, setResponse]);
+  }, []);
 
   const postMessage = useWorker<CheckPrimeRequest, CheckPrimeResponse | CheckPrimeProgress>(onmessage);
 
@@ -35,7 +35,7 @@ export function App() {
     if (newIsValid) {
       setValue(newValue);
     }
-  }, [setInput, setIsValid, setValue]);
+  }, []);
 
   const onSubmit = useCallback((e: SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();

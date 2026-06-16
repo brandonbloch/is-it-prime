@@ -1,6 +1,4 @@
 // https://di-mgt.com.au/Sieve.c.html
-import type { CheckPrimeMessage } from '@/types.ts';
-
 export default function sieve(n: number, onProgress: (percent: number) => void) {
   if (!Number.isInteger(n) || n < 1) {
     throw new Error("Invalid argument");
@@ -14,7 +12,7 @@ export default function sieve(n: number, onProgress: (percent: number) => void) 
   mark[1] = -1;
 
   // Set k = 1. Loop until k >= sqrt(n)
-  let m = 0;
+  let m: number;
   let lastSentK = 0;
   for (let k = 1; k <= klimit; k = m) {
 

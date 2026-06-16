@@ -9,7 +9,7 @@ export default function useWorker<Req, Res>(onmessage: (e: MessageEvent<Res>) =>
     return () => {
       worker.removeEventListener("message", onmessage);
     };
-  }, [worker]);
+  }, [onmessage]);
 
   return useMemo(
     () => worker.postMessage.bind(worker),

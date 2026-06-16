@@ -6,7 +6,7 @@ const server = serve({
     // Serve index.html for all unmatched routes.
     "/*": index,
 
-    "/worker.ts": async (req) => {
+    "/worker.ts": async () => {
       const result = await Bun.build({
         entrypoints: ["./src/worker.ts"],
       });
