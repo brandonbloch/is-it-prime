@@ -1,21 +1,43 @@
-# bun-react-template
+# Is It Prime?
 
-To install dependencies:
+Sometimes you just see a number and just need to know whether it's prime or composite.
 
-```bash
+Beautiful UI coming soon!
+
+## Development
+
+### Installing dependencies:
+
+```shell
 bun install
 ```
 
-To start a development server:
+### Running the development server (port 3000)
 
-```bash
+```shell
 bun dev
 ```
 
-To run for production:
+### Tests
 
-```bash
-bun start
+```shell
+bun test
 ```
 
-This project was created using `bun init` in bun v1.3.13. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+### Linting
+
+```shell
+bun run lint
+```
+
+To automatically apply safe fixes:
+
+```shell
+bun run lint --write
+```
+
+To automatically apply safe and unsafe fixes:
+
+```shell
+bun run lint --write --unsafe
+```
