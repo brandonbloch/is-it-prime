@@ -1,8 +1,19 @@
 {
-	"name": "bun-react-template",
+	"name": "is-it-prime",
+	"description": "Ever look at a number and wonder if it's prime?",
 	"version": "0.1.0",
 	"private": true,
 	"type": "module",
+	"author": {
+		"name": "Brandon Bloch",
+		"url": "https://bloch.ca",
+		"email": "brandon@bloch.ca"
+	},
+	"homepage": "https://bloch.ca/is-it-prime",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/brandonbloch/is-it-prime.git"
+	},
 	"scripts": {
 		"dev": "bun --hot src/index.ts",
 		"lint": "bunx --bun @biomejs/biome check",
