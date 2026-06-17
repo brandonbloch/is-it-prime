@@ -9,10 +9,13 @@ import type {
 } from "@/types.ts";
 import useWorker from "@/useWorker.ts";
 
+const WARN_THRESHOLD = 10_000_000;
+
 export default function App() {
 	const [input, setInput] = useState<string>("");
 	const [isValid, setIsValid] = useState<boolean>(false);
 	const [value, setValue] = useState<number>(0);
+	const [warning, setWarning] = useState<boolean>(false);
 	const [progress, setProgress] = useState<number | null>(null);
 	const [response, setResponse] = useState<CheckPrimeResponse | null>(null);
 
@@ -43,6 +46,7 @@ export default function App() {
 		if (newIsValid) {
 			setValue(newValue);
 		}
+		setWarning(newIsValid && newValue >= WARN_THRESHOLD);
 	}, []);
 
 	const onSubmit = useCallback(
@@ -88,6 +92,11 @@ export default function App() {
 					?
 				</button>
 			</form>
+			{warning ? (
+				<p className="warning">
+					Careful there big dog, this might crash your browser!
+				</p>
+			) : null}
 			{progress !== null && (
 				<progress className="progress" max="100" value={progress} />
 			)}

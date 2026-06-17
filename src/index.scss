@@ -4,6 +4,7 @@ $grey: #666;
 $lightgrey: #999;
 $blue: #3478f6;
 $lightblue: #2a4678;
+$orange: #e68e57;
 
 :root {
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -140,6 +141,10 @@ h2 {
 p {
 	margin-top: 0;
 	margin-bottom: 0.75rem;
+
+	&.warning {
+		color: $orange;
+	}
 }
 
 a {
