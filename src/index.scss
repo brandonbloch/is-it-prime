@@ -5,6 +5,7 @@ $lightgrey: #999;
 $blue: #3478f6;
 $lightblue: #2a4678;
 $orange: #e68e57;
+$red: #ea5353;
 
 :root {
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -144,6 +145,10 @@ p {
 
 	&.warning {
 		color: $orange;
+	}
+
+	&.error {
+		color: $red;
 	}
 }
 

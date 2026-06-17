@@ -19,4 +19,12 @@ export interface CheckPrimeProgress {
 	progress: number; // 0-100
 }
 
-export type CheckPrimeMessage = CheckPrimeResponse | CheckPrimeProgress;
+export interface CheckPrimeError {
+	type: "error";
+	error: string;
+}
+
+export type CheckPrimeMessage =
+	| CheckPrimeResponse
+	| CheckPrimeProgress
+	| CheckPrimeError;

@@ -18,14 +18,24 @@ export default function App() {
 	const [warning, setWarning] = useState<boolean>(false);
 	const [progress, setProgress] = useState<number | null>(null);
 	const [response, setResponse] = useState<CheckPrimeResponse | null>(null);
+	const [error, setError] = useState<boolean>(false);
 
 	const onmessage = useCallback((e: MessageEvent<CheckPrimeMessage>) => {
-		if (e.data.type === "progress") {
-			setProgress(e.data.progress);
-			setResponse(null);
-		} else {
-			setProgress(null);
-			setResponse(e.data);
+		switch (e.data.type) {
+			case "progress":
+				setProgress(e.data.progress);
+				setResponse(null);
+				setError(false);
+				break;
+			case "response":
+				setProgress(null);
+				setResponse(e.data);
+				setError(false);
+				break;
+			default:
+				setProgress(null);
+				setResponse(null);
+				setError(true);
 		}
 	}, []);
 
@@ -52,7 +62,7 @@ export default function App() {
 	const onSubmit = useCallback(
 		(e: SubmitEvent<HTMLFormElement>) => {
 			e.preventDefault();
-			setProgress(0);
+			setProgress(-1);
 			setResponse(null);
 			postMessage({
 				value,
@@ -97,8 +107,13 @@ export default function App() {
 					Careful there big dog, this might crash your browser!
 				</p>
 			) : null}
+			{error ? <p className="error">Told you so!</p> : null}
 			{progress !== null && (
-				<progress className="progress" max="100" value={progress} />
+				<progress
+					className="progress"
+					max="100"
+					value={progress < 0 ? undefined : progress}
+				/>
 			)}
 			{response !== null && <Result result={response} />}
 		</div>
