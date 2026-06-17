@@ -62,6 +62,7 @@ export default function App() {
 			e.preventDefault();
 			setProgress(-1);
 			setResponse(null);
+			setError(false);
 			postMessage({
 				value,
 			});
