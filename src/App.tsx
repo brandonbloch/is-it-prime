@@ -37,7 +37,8 @@ export default function App() {
 		const newIsValid =
 			!Number.isNaN(newValue) &&
 			Number.isFinite(newValue) &&
-			newValue.toString() === newInput.trim();
+			newValue.toString() === newInput.trim() &&
+			newValue > 0;
 		setIsValid(newIsValid);
 		if (newIsValid) {
 			setValue(newValue);
