@@ -9,7 +9,7 @@ import type {
 } from "@/types.ts";
 import useWorker from "@/useWorker.ts";
 
-const WARN_THRESHOLD = 10_000_000;
+const WARN_THRESHOLD = 100_000_000;
 
 export default function App() {
 	const [input, setInput] = useState<string>("");

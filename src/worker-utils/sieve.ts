@@ -7,7 +7,7 @@ export default function sieve(
 		throw new Error("Invalid argument");
 	}
 	const nlimit = n;
-	const mark = new Array<number>(nlimit).fill(0);
+	const mark = new Int8Array(nlimit);
 	const klimit = Math.floor(Math.sqrt(nlimit)) + 1;
 
 	// Mark the composites
