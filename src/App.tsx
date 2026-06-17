@@ -72,6 +72,7 @@ export default function App() {
 				<input
 					className="input"
 					type="number"
+					inputMode="numeric"
 					value={input}
 					onChange={onChange}
 					placeholder="Enter a positive integer"
