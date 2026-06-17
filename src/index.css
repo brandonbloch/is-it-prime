@@ -1,140 +1,141 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	color-scheme: light dark;
+	color: rgba(255, 255, 255, 0.87);
+	background-color: #242424;
 }
 
 body {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 .main {
-  box-sizing: border-box;
-  max-width: 72rem;
-  padding: 0.5rem;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+	box-sizing: border-box;
+	max-width: 72rem;
+	padding: 0.5rem;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
 }
 
 .header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
 }
 
 h1 {
-  margin: 0;
-  font-size: 2.5rem;
+	margin: 0;
+	font-size: 2.5rem;
 }
 
 .github-logo {
-  box-sizing: border-box;
-  width: 2rem;
-  height: 2rem;
-  background-color: rgba(255, 255, 255, 0.87);
-  mask: url("./github.svg") no-repeat center/contain;
-  position: relative;
-  overflow: hidden;
-  margin-left: 1rem;
+	box-sizing: border-box;
+	width: 2rem;
+	height: 2rem;
+	background-color: rgba(255, 255, 255, 0.87);
+	mask: url("./github.svg") no-repeat center / contain;
+	position: relative;
+	overflow: hidden;
+	margin-left: 1rem;
 }
 
 .github-logo-label {
-  position: absolute;
-  top: 200%;
-  left: 200%;
+	position: absolute;
+	top: 200%;
+	left: 200%;
 }
 
 .form {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 0.5rem;
-  align-items: center;
-  justify-content: center;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	gap: 0.5rem;
+	align-items: center;
+	justify-content: center;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 }
 
 .input {
-  box-sizing: border-box;
-  font: inherit;
-  font-size: 2rem;
-  height: 3rem;
-  padding: 0.5rem;
-  border: solid 1px #666;
-  border-radius: 0.25rem;
-  width: auto;
-  flex-basis: 0;
-  flex-grow: 1;
-  min-width: 0;
-  max-width: 25rem;
-  -webkit-appearance: none;
-  -moz-appearance: textfield;
+	box-sizing: border-box;
+	font: inherit;
+	font-size: 2rem;
+	height: 3rem;
+	padding: 0.5rem;
+	border: solid 1px #666;
+	border-radius: 0.25rem;
+	width: auto;
+	flex-basis: 0;
+	flex-grow: 1;
+	min-width: 0;
+	max-width: 25rem;
+	-webkit-appearance: none;
+	-moz-appearance: textfield;
 }
 .input:focus {
-  outline: none;
-  box-shadow: 0 0 4px #3478f6;
+	outline: none;
+	box-shadow: 0 0 4px #3478f6;
 }
 .input::placeholder {
-  color: #999;
+	color: #999;
 }
-.input::-webkit-outer-spin-button, .input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
 }
 
 .submit {
-  box-sizing: border-box;
-  font: inherit;
-  font-size: 1.5rem;
-  font-weight: bold;
-  width: 3rem;
-  height: 3rem;
-  padding: 0;
-  flex-grow: 0;
-  flex-shrink: 0;
-  -webkit-appearance: none;
-  background-color: #3478f6;
-  border: solid 1px #666;
-  border-radius: 0.25rem;
+	box-sizing: border-box;
+	font: inherit;
+	font-size: 1.5rem;
+	font-weight: bold;
+	width: 3rem;
+	height: 3rem;
+	padding: 0;
+	flex-grow: 0;
+	flex-shrink: 0;
+	-webkit-appearance: none;
+	background-color: #3478f6;
+	border: solid 1px #666;
+	border-radius: 0.25rem;
 }
 .submit:disabled {
-  background-color: #2a4678;
+	background-color: #2a4678;
 }
 
 .progress {
-  width: 100%;
-  max-width: 14rem;
+	width: 100%;
+	max-width: 14rem;
 }
 
 .result {
-  max-width: 42rem;
-  margin-left: auto;
-  margin-right: auto;
+	max-width: 42rem;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 h2 {
-  margin-bottom: 1rem;
+	margin-bottom: 1rem;
 }
 
 p {
-  margin-top: 0;
-  margin-bottom: 0.75rem;
+	margin-top: 0;
+	margin-bottom: 0.75rem;
 }
 p.warning {
-  color: #e68e57;
+	color: #e68e57;
 }
 p.error {
-  color: #ea5353;
+	color: #ea5353;
 }
 
 a {
-  color: inherit;
+	color: inherit;
 }
 
 /*# sourceMappingURL=index.css.map */
