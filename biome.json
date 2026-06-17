@@ -1,4 +1,7 @@
 {
+	"files": {
+		"includes": ["**", "!**/*.svg", "!!**/dist"]
+	},
 	"linter": {
 		"domains": {
 			"react": "all",

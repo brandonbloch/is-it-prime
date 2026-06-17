@@ -8,36 +8,42 @@ Beautiful UI coming soon!
 
 ### Installing dependencies:
 
-```shell
+```bash
 bun install
 ```
 
 ### Running the development server (port 3000)
 
-```shell
+```bash
 bun dev
+```
+
+### Building
+
+```bash
+bun run build
 ```
 
 ### Tests
 
-```shell
+```bash
 bun test
 ```
 
 ### Linting
 
-```shell
+```bash
 bun run lint
 ```
 
 To automatically apply safe fixes:
 
-```shell
+```bash
 bun run lint --write
 ```
 
 To automatically apply safe and unsafe fixes:
 
-```shell
+```bash
 bun run lint --write --unsafe
 ```

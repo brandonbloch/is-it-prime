@@ -58,7 +58,16 @@ export default function App() {
 
 	return (
 		<div className="main">
-			<h1>Is It Prime?</h1>
+			<div className="header">
+				<h1>Is It Prime?</h1>
+				<a
+					className="github-logo"
+					href="https://github.com/brandonbloch/data-url-viewer"
+					title="View on GitHub"
+				>
+					<span className="github-logo-label">View on GitHub</span>
+				</a>
+			</div>
 			<form className="form" onSubmit={onSubmit}>
 				<input
 					className="input"

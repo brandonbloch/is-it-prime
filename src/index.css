@@ -20,9 +20,33 @@ body {
 	text-align: center;
 }
 
+.header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
 h1 {
 	margin: 0;
 	font-size: 2.5rem;
+}
+
+.github-logo {
+	box-sizing: border-box;
+	width: 2rem;
+	height: 2rem;
+	background-color: rgba(255, 255, 255, 0.87);
+	mask: url("./github.svg") no-repeat center / contain;
+	position: relative;
+	overflow: hidden;
+	margin-left: 1rem;
+}
+
+.github-logo-label {
+	position: absolute;
+	top: 200%;
+	left: 200%;
 }
 
 .form {
@@ -49,7 +73,12 @@ h1 {
 	flex-grow: 1;
 	min-width: 0;
 	max-width: 25rem;
+	-webkit-appearance: none;
 	-moz-appearance: textfield;
+}
+.input:focus {
+	outline: none;
+	box-shadow: 0 0 4px #3478f6;
 }
 .input::placeholder {
 	color: #999;
@@ -67,8 +96,16 @@ h1 {
 	font-weight: bold;
 	width: 3rem;
 	height: 3rem;
+	padding: 0;
 	flex-grow: 0;
 	flex-shrink: 0;
+	-webkit-appearance: none;
+	background-color: #3478f6;
+	border: solid 1px #666;
+	border-radius: 0.25rem;
+}
+.submit:disabled {
+	background-color: #2a4678;
 }
 
 .progress {
