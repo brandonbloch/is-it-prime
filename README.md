@@ -2,8 +2,6 @@
 
 Sometimes you just see a number and just need to know whether it's prime or composite.
 
-Beautiful UI coming soon!
-
 ## Development
 
 ### Installing dependencies:
