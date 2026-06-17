@@ -3,7 +3,7 @@ import type { ChangeEvent, SubmitEvent } from "react";
 import { useCallback, useState } from "react";
 import Result from "@/components/Result.tsx";
 import type {
-	CheckPrimeProgress,
+	CheckPrimeMessage,
 	CheckPrimeRequest,
 	CheckPrimeResponse,
 } from "@/types.ts";
@@ -16,23 +16,19 @@ export default function App() {
 	const [progress, setProgress] = useState<number | null>(null);
 	const [response, setResponse] = useState<CheckPrimeResponse | null>(null);
 
-	const onmessage = useCallback(
-		(e: MessageEvent<CheckPrimeResponse | CheckPrimeProgress>) => {
-			if (e.data.type === "progress") {
-				setProgress(e.data.progress);
-				setResponse(null);
-			} else {
-				setProgress(null);
-				setResponse(e.data);
-			}
-		},
-		[],
-	);
+	const onmessage = useCallback((e: MessageEvent<CheckPrimeMessage>) => {
+		if (e.data.type === "progress") {
+			setProgress(e.data.progress);
+			setResponse(null);
+		} else {
+			setProgress(null);
+			setResponse(e.data);
+		}
+	}, []);
 
-	const postMessage = useWorker<
-		CheckPrimeRequest,
-		CheckPrimeResponse | CheckPrimeProgress
-	>(onmessage);
+	const postMessage = useWorker<CheckPrimeRequest, CheckPrimeMessage>(
+		onmessage,
+	);
 
 	const onChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
 		const newInput = e.target.value;
@@ -51,7 +47,7 @@ export default function App() {
 	const onSubmit = useCallback(
 		(e: SubmitEvent<HTMLFormElement>) => {
 			e.preventDefault();
-			setProgress(null);
+			setProgress(0);
 			setResponse(null);
 			postMessage({
 				value,
@@ -81,7 +77,9 @@ export default function App() {
 					?
 				</button>
 			</form>
-			{progress !== null && <progress max="100" value={progress} />}
+			{progress !== null && (
+				<progress className="progress" max="100" value={progress} />
+			)}
 			{response !== null && <Result result={response} />}
 		</div>
 	);

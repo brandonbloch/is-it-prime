@@ -17,10 +17,33 @@ function getOrdinalSuffix(n: number) {
 
 const format = new Intl.NumberFormat("en-US");
 
-function thousandSeparator(n: number) {
+// 1000000 -> 1,000,000
+export function formatThousands(n: number) {
 	return format.format(n);
 }
 
+// 1012 -> 1,012th
 export function formatOrdinal(n: number) {
-	return `${thousandSeparator(n)}${getOrdinalSuffix(n)}`;
+	return `${formatThousands(n)}${getOrdinalSuffix(n)}`;
+}
+
+export function joinListTimes(ns: number[]) {
+	return ns.join(" × ");
+}
+
+export function joinListCommas(ns: number[]) {
+	return ns.join(", ");
+}
+
+export function joinListCommasAnd(ns: number[]) {
+	switch (ns.length) {
+		case 0:
+			return "";
+		case 1:
+			return ns[0]!.toString();
+		case 2:
+			return `${ns[0]!} and ${ns[1]}`;
+		default:
+			return `${ns.slice(0, -1).join(", ")}, and ${ns[ns.length - 1]!}`;
+	}
 }
