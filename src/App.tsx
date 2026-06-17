@@ -1,7 +1,7 @@
 import "./index.css";
 import type { ChangeEvent, SubmitEvent } from "react";
 import { useCallback, useState } from "react";
-import Result from "@/Result.tsx";
+import Result from "@/components/Result.tsx";
 import type {
 	CheckPrimeProgress,
 	CheckPrimeRequest,
@@ -63,15 +63,21 @@ export default function App() {
 	return (
 		<div className="main">
 			<h1>Is It Prime?</h1>
-			<form onSubmit={onSubmit}>
+			<form className="form" onSubmit={onSubmit}>
 				<input
+					className="input"
 					type="number"
 					value={input}
 					onChange={onChange}
 					placeholder="Enter a positive integer"
 					aria-label="Enter a positive integer"
 				/>
-				<button type="submit" aria-label="Is it prime?" disabled={!isValid}>
+				<button
+					className="submit"
+					type="submit"
+					aria-label="Is it prime?"
+					disabled={!isValid}
+				>
 					?
 				</button>
 			</form>
