@@ -63,7 +63,7 @@ export default function App() {
 				<h1>Is It Prime?</h1>
 				<a
 					className="github-logo"
-					href="https://github.com/brandonbloch/data-url-viewer"
+					href="https://github.com/brandonbloch/is-it-prime"
 					title="View on GitHub"
 				>
 					<span className="github-logo-label">View on GitHub</span>
