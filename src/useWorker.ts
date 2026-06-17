@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from "react";
 
-const worker = new Worker("/worker.ts");
+const worker = new Worker("./worker.js");
 
 // use a memoized event handler for onmessage!
 export default function useWorker<Req, Res>(
