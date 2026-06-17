@@ -4,8 +4,10 @@
 	},
 	"linter": {
 		"domains": {
+			"project": "recommended",
 			"react": "all",
-			"test": "all"
+			"test": "all",
+			"types": "all"
 		},
 		"rules": {
 			"style": {

@@ -1,5 +1,5 @@
 import type { CheckPrimeMessage, CheckPrimeRequest } from "@/types.ts";
-import { checkValue } from "@/worker-utils";
+import { checkValue } from "@/worker-utils/index.ts";
 
 console.log("worker is working!");
 

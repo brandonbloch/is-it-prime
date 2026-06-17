@@ -21,21 +21,19 @@ export default function App() {
 	const [error, setError] = useState<boolean>(false);
 
 	const onmessage = useCallback((e: MessageEvent<CheckPrimeMessage>) => {
-		switch (e.data.type) {
-			case "progress":
-				setProgress(e.data.progress);
-				setResponse(null);
-				setError(false);
-				break;
-			case "response":
-				setProgress(null);
-				setResponse(e.data);
-				setError(false);
-				break;
-			default:
-				setProgress(null);
-				setResponse(null);
-				setError(true);
+		if (e.data.type === "progress") {
+			setProgress(e.data.progress);
+			setResponse(null);
+			setError(false);
+		} else if (e.data.type === "response") {
+			setProgress(null);
+			setResponse(e.data);
+			setError(false);
+		} else {
+			// e.data.type === "error"
+			setProgress(null);
+			setResponse(null);
+			setError(true);
 		}
 	}, []);
 
